@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Sawirricardo\IcdApi\Laravel\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class IcdApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-icd-api';
 
     public $description = 'My command';
 
