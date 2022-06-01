@@ -7,7 +7,7 @@ use Sawirricardo\IcdApi\IcdApi as Client;
 
 class IcdApi
 {
-    private Repository $config;
+    private $config;
 
     public function __construct(Repository $config)
     {

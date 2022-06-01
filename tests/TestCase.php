@@ -21,8 +21,8 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
-
+        config()->set('icd-api.client_id', 'client_id');
+        config()->set('icd-api.client_secret', 'client_secret');
         /*
         $migration = include __DIR__.'/../database/migrations/create_laravel-icd-api_table.php.stub';
         $migration->up();

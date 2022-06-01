@@ -4,7 +4,6 @@ namespace Sawirricardo\IcdApi\Laravel;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
-use Sawirricardo\IcdApi\Laravel\Facades\IcdApi;
 use Sawirricardo\IcdApi\Laravel\Http\Controllers\IcdApiTokenController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -20,7 +19,9 @@ class IcdApiServiceProvider extends PackageServiceProvider
 
     public function registeringPackage()
     {
-        $this->app->singleton('laravel-icd-api', IcdApi::class);
+        $this->app->singleton('laravel-icd-api', function ($app) {
+            return new IcdApi($app['config']);
+        });
     }
 
     public function boot()
