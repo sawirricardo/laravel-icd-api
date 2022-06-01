@@ -4,6 +4,7 @@ namespace Sawirricardo\IcdApi\Laravel;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
+use Sawirricardo\IcdApi\Laravel\Facades\IcdApi;
 use Sawirricardo\IcdApi\Laravel\Http\Controllers\IcdApiTokenController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
