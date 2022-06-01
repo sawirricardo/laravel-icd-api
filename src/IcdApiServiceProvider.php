@@ -35,10 +35,11 @@ class IcdApiServiceProvider extends PackageServiceProvider
         });
     }
 
-    public function packageBooted()
+    public function bootingPackage()
     {
         Route::macro('icdApiTokens', function (string $url, string $name = 'default') {
-            return Route::post($url, IcdApiTokenController::class)->name("icd-api-token-{$name}");
+            return Route::post($url, IcdApiTokenController::class)
+                ->name("icd-api-token-{$name}");
         });
     }
 }
