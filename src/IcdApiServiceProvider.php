@@ -24,22 +24,19 @@ class IcdApiServiceProvider extends PackageServiceProvider
         });
     }
 
-    public function boot()
+    public function packageBooted()
     {
+        Route::macro('icdApiTokens', function (string $url, string $name = 'default') {
+            return Route::post($url, IcdApiTokenController::class)
+                ->name("icd-api-token-{$name}");
+        });
+
         Blade::directive('icdEctStyles', function () {
             return "{!! \Sawirricardo\IcdApi\Laravel\IcdApi::ectStyles() !!}";
         });
 
         Blade::directive('icdEctScripts', function () {
             return "{!! \Sawirricardo\IcdApi\Laravel\IcdApi::ectScripts() !!}";
-        });
-    }
-
-    public function bootingPackage()
-    {
-        Route::macro('icdApiTokens', function (string $url, string $name = 'default') {
-            return Route::post($url, IcdApiTokenController::class)
-                ->name("icd-api-token-{$name}");
         });
     }
 }
