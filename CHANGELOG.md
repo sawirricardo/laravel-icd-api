@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-icd-api` will be documented in this file.
 
+## 0.0.4 - 2022-06-01
+
+service provider
+
 ## 0.0.3 - 2022-06-01
 
 Fix
