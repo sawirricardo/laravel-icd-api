@@ -1,5 +1,7 @@
 <?php
 
+use Sawirricardo\IcdApi\Laravel\IcdApi;
+
 it('can test', function () {
-    expect(true)->toBeTrue();
+    expect(icdApiClient())->toBeInstanceOf(IcdApi::class);
 });

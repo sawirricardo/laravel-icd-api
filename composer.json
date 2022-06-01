@@ -16,10 +16,10 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.0",
         "illuminate/contracts": "^9.0",
-        "sawirricardo/icd-api-php": "dev-main",
-        "spatie/laravel-package-tools": "^1.9.2"
+        "sawirricardo/icd-api-php": "^0.1.0",
+        "spatie/laravel-package-tools": "^1.8.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
@@ -36,13 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Sawirricardo\\IcdApi\\": "src",
-            "Sawirricardo\\IcdApi\\Database\\Factories\\": "database/factories"
+            "Sawirricardo\\IcdApi\\Laravel\\": "src",
+            "Sawirricardo\\IcdApi\\Laravel\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sawirricardo\\IcdApi\\Tests\\": "tests"
+            "Sawirricardo\\IcdApi\\Laravel\\Tests\\": "tests"
         },
         "files": [
             "src/helpers.php"
@@ -64,10 +64,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sawirricardo\\IcdApi\\IcdApiServiceProvider"
+                "Sawirricardo\\IcdApi\\Laravel\\IcdApiServiceProvider"
             ],
             "aliases": {
-                "IcdApi": "Sawirricardo\\IcdApi\\Facades\\IcdApi"
+                "IcdApi": "Sawirricardo\\IcdApi\\Laravel\\Facades\\IcdApi"
             }
         }
     },

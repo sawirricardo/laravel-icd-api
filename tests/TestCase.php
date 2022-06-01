@@ -1,20 +1,15 @@
 <?php
 
-namespace Sawirricardo\IcdApi\Tests;
+namespace Sawirricardo\IcdApi\Laravel\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Sawirricardo\IcdApi\IcdApiServiceProvider;
+use Sawirricardo\IcdApi\Laravel\IcdApiServiceProvider;
 
 class TestCase extends Orchestra
 {
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Sawirricardo\\IcdApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
     }
 
     protected function getPackageProviders($app)
