@@ -9,7 +9,7 @@ class IcdApiTokenController extends Controller
     public function __invoke()
     {
         return response()->json([
-            'access_token' => icdApi()->client()->getAccessTokenData(),
+            'access_token' => icdApiClient()->getAccessTokenData(),
         ]);
     }
 }

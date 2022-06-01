@@ -1,13 +1,14 @@
 <?php
 
-use Sawirricardo\IcdApi\Laravel\IcdApi;
+use Sawirricardo\IcdApi\IcdApi as Client;
+use Sawirricardo\IcdApi\Laravel\Facades\IcdApi;
 
 if (! function_exists('icdApi')) {
     /**
      * Get the IcdApi instance.
      */
-    function icdApi(): IcdApi
+    function icdApiClient(): Client
     {
-        return app(IcdApi::class);
+        return app(IcdApi::class)::client();
     }
 }

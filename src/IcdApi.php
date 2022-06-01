@@ -14,14 +14,6 @@ class IcdApi
         $this->config = $config['icd-api'];
     }
 
-    public function client(): Client
-    {
-        return new Client(
-            $this->config['client_id'],
-            $this->config['client_secret'],
-        );
-    }
-
     public static function ectStyles()
     {
         return '<link rel="stylesheet" href="https://icdcdn.who.int/embeddedct/icd11ect-1.5.css">';
@@ -30,5 +22,13 @@ class IcdApi
     public static function ectScripts()
     {
         return '<script src="https://icdcdn.who.int/embeddedct/icd11ect-1.5.js" defer></script>';
+    }
+
+    public function client(): Client
+    {
+        return new Client(
+            $this->config['client_id'],
+            $this->config['client_secret'],
+        );
     }
 }
